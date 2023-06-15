@@ -18,11 +18,11 @@ pipeline {
    TEST_URL="srikaanth.com"
   }
    stages {
+     input {
+               message "Should we continue?"
+                 ok "Yes"
+             }
      stage ('one') {
-       input {
-          message "Should we continue?"
-            ok "Yes"
-        }
      steps {
      sh 'echo hello world'
      sh 'echo ${TEST_URL}'
