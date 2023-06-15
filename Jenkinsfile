@@ -57,7 +57,7 @@ pipeline {
  pipeline {
   agent any
    stages {
-    parallel {
+    stage ('parallel') {
      stage ('one') {
           steps {
            sh 'echo first stage'
