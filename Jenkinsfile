@@ -58,21 +58,24 @@
   agent any
    stages {
     stage ('parallel') {
-     stage ('one') {
-          steps {
-           sh 'echo first stage'
-          }
-         }
-          stage ('two') {
-              steps {
-               sh 'echo second stage'
-              }
-             }
-           stage ('three') {
-               steps {
-                sh 'echo third stage'
-               }
-              }
+      parallel {
+        stage ('one') {
+                 steps {
+                  sh 'echo first stage'
+                 }
+                }
+                 stage ('two') {
+                     steps {
+                      sh 'echo second stage'
+                     }
+                    }
+                  stage ('three') {
+                      steps {
+                       sh 'echo third stage'
+                      }
+                     }
+
+      }
     }
    }
  }
