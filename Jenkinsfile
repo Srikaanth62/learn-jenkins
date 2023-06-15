@@ -1,3 +1,4 @@
+/*
 pipeline {
   agent {
     node {
@@ -51,3 +52,27 @@ pipeline {
       sh 'echo Post CleanUP steps'
     }
    }
+ */
+
+ pipeline {
+  agent any
+   stages {
+    parallel {
+     stage ('one') {
+          steps {
+           sh 'echo first stage'
+          }
+         }
+          stage ('two') {
+              steps {
+               sh 'echo second stage'
+              }
+             }
+           stage ('three') {
+               steps {
+                sh 'echo third stage'
+               }
+              }
+    }
+   }
+ }
