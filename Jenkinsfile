@@ -34,7 +34,7 @@ pipeline {
      stage ('two') {
       when {
       expression {
-       GIT_BRANCH == 'origin/test'
+       GIT_BRANCH == 'origin/main'
       }
 
       }
